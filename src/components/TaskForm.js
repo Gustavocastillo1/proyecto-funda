@@ -2,7 +2,7 @@ import { useState } from "react"
 import {useDispatch } from 'react-redux'
 import {addTask} from '../features/tasks/taskSlice'
 import {v4 as uuid} from 'uuid'
-
+import {useNavigate} from 'react-router-dom'
 
 export function TaskForm(){
 
@@ -24,10 +24,12 @@ export function TaskForm(){
       ...task,
       id:uuid(),
     }))
-    return 
+    navigate('/') 
   }
-
+  //Instanciando los Hooks
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
 
 
     return(
